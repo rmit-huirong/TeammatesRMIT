@@ -659,15 +659,17 @@ Prevents content overflow in navbar. */
 }
 
 .btn-login {
+    padding-top: 13px;
+    margin-left: 30%;
     background-color: transparent;
     box-shadow: none;
-    color: #0F0;
+    color: #FEFEFE;
 }
 
 .btn-login:focus,
 .btn-login:hover,
 .btn-login:active {
-    color: #0F0;
+    color: #E60028;
 }
 
 @media (max-width: 768px) {
@@ -1325,6 +1327,78 @@ Default to alert color for visibility titles used within an alert context.
     display: table-cell;
     vertical-align: middle;
 }
+
+.modal {
+ 
+    display:none;
+    position: fixed;
+    z-index:1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0,0.4);
+    
+}
+
+.modal-content {
+ 
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%;
+    padding-bottom: 30px;
+}
+
+.imgcontainer{
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.btnContainer{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.btn-studentLogin{
+    margin-right: 10px;
+    background-color:#E60028;
+    color: #FEFEFE;
+}
+
+.btn-instructorLogin{
+    margin-left: 10px;
+    background-color:#E60028;
+    color: #FEFEFE;
+}
+
+
+.close{
+
+    position:absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus{
+ 
+    color:red;
+    cursor: pointer;
+}
+
 
 /* /////////////////////////////////////////////////////////
 ////////////////// Dropdowns with Submenus /////////////////

@@ -41,13 +41,29 @@
               <li class="${currentPage == 'contact' ? 'active' : ''}"><a href="contact.jsp">Contact</a></li>
               <li class="${currentPage == 'terms' ? 'active' : ''}"><a href="terms.jsp">Terms of Use</a></li>
             </ul>
-            <form class="navbar-form navbar-right" action="/login" name="login">
-              <input type="submit" name="student" class="btn btn-login " id="btnStudentLogin" value="Student Login" label="studentLogin">
-              <input type="submit" name="instructor" class="btn btn-login" id="btnInstructorLogin" value="Instructor Login" label="instructorLogin">
-            </form>
+             <button onclick="document.getElementById('modal-wrapper').style.display='block'" class="btn btn-login">Login</button>  
           </div>
         </div>
       </nav>
+      <div id="modal-wrapper" class="modal">
+        <form class="modal-content animate" action="/login" name="login">
+          <div class="imgcontainer">
+           <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+           <img src="/images/avatar-profile.png"  alt="Avatar" class="avatar">
+           <h1 style="text-align:center">Login</h1>
+          </div>
+           
+          <div class="btnContainer">    
+            <form class="modal-content-btn" action="/login" name="login">
+			  <input type="submit" name="student" class="btn btn-studentLogin " id="btnStudentLogin" value="Student" label="studentLogin">
+              <input type="submit" name="instructor" class="btn btn-instructorLogin" id="btnInstructorLogin" value="Instructor" label="instructorLogin">
+            </form>
+          </div>
+           
+        </form>
+      </div>
+      
+      
       <div id="mainContent" class="container">
         <jsp:doBody />
       </div>
