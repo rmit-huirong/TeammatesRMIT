@@ -7,7 +7,7 @@ body {
 }
 
 .navbar-inverse {
-    background-image: linear-gradient(to bottom,#000083 0,#000083 100%);
+    background-image: linear-gradient(to bottom,#000053 0,#000053 100%);
 }
  
 .navbar-inverse .navbar-nav>.active>a {
@@ -1390,7 +1390,7 @@ Default to alert color for visibility titles used within an alert context.
 
 #footerComponent {
     background-color: black;
-    background-image: linear-gradient(to bottom, #000083 0, #000083 100%);
+    background-image: linear-gradient(to bottom, #000053 0, #000053 100%);
     bottom: 0;
     color: gray;
     height: 20px;
