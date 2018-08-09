@@ -651,15 +651,17 @@ Prevents content overflow in navbar. */
 }
 
 .btn-login {
+    padding-top: 13px;
+    margin-left: 30%;
     background-color: transparent;
     box-shadow: none;
-    color: #0F0;
+    color: #FEFEFE;
 }
 
 .btn-login:focus,
 .btn-login:hover,
 .btn-login:active {
-    color: #0F0;
+    color: #E60028;
 }
 
 @media (max-width: 768px) {
@@ -1329,6 +1331,7 @@ Default to alert color for visibility titles used within an alert context.
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0,0.4);
+    
 }
 
 .modal-content {
@@ -1346,12 +1349,30 @@ Default to alert color for visibility titles used within an alert context.
     position: relative;
 }
 
+.btnContainer{
+    text-align: center;
+    margin-top: 50px;
+}
+
 .avatar{
     width: 100px;
     height: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     border-radius: 50%;
 }
 
+.btn-studentLogin{
+    margin-right: 10px;
+    background-color:#E60028;
+    color: #FEFEFE;
+}
+
+.btn-instructorLogin{
+    margin-left: 10px;
+    background-color:#E60028;
+    color: #FEFEFE;
+}
 
 
 .close{
