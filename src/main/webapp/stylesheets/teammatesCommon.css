@@ -661,7 +661,7 @@ Prevents content overflow in navbar. */
 /////////////////////// Static page ////////////////////////
 ///////////////////////////////////////////////////////// */
 .navbar-brand {
-    padding: 0;
+    padding: 8px;
 }
 
 .btn-login {
