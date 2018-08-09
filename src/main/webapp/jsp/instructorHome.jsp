@@ -8,8 +8,6 @@
   <script type="text/javascript" src="/js/instructorHome.js"></script>
 </c:set>
 <ti:instructorPage title="Home" jsIncludes="${jsIncludes}">
-  <home:search />
-  <br>
   <t:statusMessage statusMessagesToUser="${data.statusMessagesToUser}" />
   <ti:remindParticularStudentsModal remindParticularStudentsLink="${data.remindParticularStudentsLink}" />
   <ti:resendPublishedEmailModal sessionResendPublishedEmailLink="${data.sessionResendPublishedEmailLink}" />
