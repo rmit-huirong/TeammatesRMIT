@@ -39,11 +39,17 @@
         <li>
           <a class="nav help" href="/instructorHelp.jsp" target="_blank" rel="noopener noreferrer">Help</a>
         </li>
+<<<<<<< Updated upstream
         <li><x:search></x:search></li>
         
       </ul>
       
       <ul class="nav navbar-nav pull-right">
+=======
+     
+      </ul>
+       <ul class="nav navbar-nav pull-right">
+>>>>>>> Stashed changes
         <li>
           <a id="btnLogout" class="nav logout" href="<%= Const.ActionURIs.LOGOUT %>">Logout
 
@@ -55,7 +61,17 @@
         <li>
         </li>
       </ul>
+<<<<<<< Updated upstream
           
+=======
+      
+      <div>
+       <x:search></x:search>
+      </div>
+     
+            
+            
+>>>>>>> Stashed changes
     </div>
   </div>
 </div>

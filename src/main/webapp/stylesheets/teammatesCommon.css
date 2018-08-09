@@ -1565,3 +1565,7 @@ Prevent Long URL From Breaking Out of Container
 .icon-info::before {
     content: '\e086';
 }
+
+.padding-searchbar {
+  padding-top:3%;
+}
