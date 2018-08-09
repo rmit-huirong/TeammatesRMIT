@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
+
+<%@ taglib tagdir="/WEB-INF/tags/instructor/home" prefix="x" %>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -38,7 +40,12 @@
           <a class="nav help" href="/instructorHelp.jsp" target="_blank" rel="noopener noreferrer">Help</a>
         </li>
       </ul>
+      
       <ul class="nav navbar-nav pull-right">
+
+      </ul>
+       <ul class="nav navbar-nav pull-right">
+
         <li>
           <a id="btnLogout" class="nav logout" href="<%= Const.ActionURIs.LOGOUT %>">Logout
 
@@ -47,7 +54,14 @@
             </span>)
           </a>
         </li>
+        <li>
+        </li>
       </ul>
+      
+      <div>
+       <x:search></x:search>
+      </div>
+
     </div>
   </div>
 </div>
