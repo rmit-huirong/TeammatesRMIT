@@ -5,7 +5,7 @@
 <c:set var="jsIncludes">
   <script type="text/javascript" src="/js/contact.js"></script>
 </c:set>
-<t:staticPage currentPage="contact">
+<t:staticPage jsIncludes="${jsIncludes}" currentPage="contact">
   <main class="container">
     <h1 class="color-orange">
       </br>
