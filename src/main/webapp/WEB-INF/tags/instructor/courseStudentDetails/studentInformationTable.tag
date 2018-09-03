@@ -34,6 +34,7 @@
     </div>
     <div class="form-group">
       <label class="col-sm-1 control-label">Comments:</label>
+      <button id="like-button" onclick=""></button>
       <div class="col-sm-11" id="<%= Const.ParamsNames.COMMENTS %>">
         <p class="form-control-static">${fn:escapeXml(studentInfoTable.comments)}</p>
       </div>
