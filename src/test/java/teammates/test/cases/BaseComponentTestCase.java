@@ -105,7 +105,7 @@ public class BaseComponentTestCase extends BaseTestCaseWithDatastoreAccess {
     @Override
     protected String doRemoveAndRestoreDataBundle(DataBundle dataBundle) {
         try {
-            System.out.println("PLS TEST");
+            
             backDoorLogic.removeDataBundle(dataBundle);
             backDoorLogic.persistDataBundle(dataBundle);
             return Const.StatusCodes.BACKDOOR_STATUS_SUCCESS;
