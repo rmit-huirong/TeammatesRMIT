@@ -242,9 +242,9 @@ public class FieldValidator {
      * Domain part:
      * <li>Only allow letters, digits, hyphen and dot; Must end with letters
      */
-    public static final String REGEX_EMAIL = "^s{1}\\d{7}@student.rmit.edu.au$";
-    
-   
+    public static final String REGEX_EMAIL = "^[\\w+-][\\w+!#$%&'*/=?^_`{}~-]*+(\\.[\\w+!#$%&'*/=?^_`{}~-]+)*+"
+            + "@([A-Za-z0-9-]+\\.)*[A-Za-z]+$";
+       
     /**
      * Allows English alphabet, numbers, underscore,  dot and hyphen.
      */
