@@ -7,9 +7,12 @@
 
 <c:set var="jsIncludes">
   <script type="text/javascript" src="/js/studentFeedbackResults.js"></script>
+  <script type="text/javascript" src="/js/jspdf.debug.js"></script>
+  <script type="text/javascript" src="/js/PdfCreare.js"></script>
 </c:set>
 
 <ts:studentPage title="Feedback Results" jsIncludes="${jsIncludes}">
+  <div id = "PDF_PRINT">
   <c:if test="${empty data.account.googleId}">
     <div id="registerMessage" class="alert alert-info">
       ${data.registerMessage}
@@ -29,4 +32,19 @@
       There are currently no responses for you for this feedback session.
     </div>
   </c:if>
+  </div>
 </ts:studentPage>
+
+<div class="bold align-center">
+
+      <button type="submit" class="btn btn-primary center-block margin-top-7px"
+              id="response_submit_button" data-toggle="tooltip"
+              data-placement="top" title="click here to download your feedback as pdf" onclick="run();">
+        Download as Pdf
+      </button>
+  <br><br><br><br>
+</div>
+
+<script>
+
+</script>
