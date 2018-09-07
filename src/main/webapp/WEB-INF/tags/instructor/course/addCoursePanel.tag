@@ -1,8 +1,10 @@
 <%@ tag trimDirectiveWhitespaces="true" %>
 <%@ tag description="Add New Course Panel of Course Page" pageEncoding="UTF-8" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ tag import="teammates.common.util.Const" %>
 <%@ tag import="teammates.common.util.FieldValidator" %>
+<jsp:useBean id="Courses" class="teammates.storage.entity.CourseList" scope="page"/>
 <%@ taglib tagdir="/WEB-INF/tags/instructor" prefix="ti" %>
 <%@ attribute name="googleId" required="true" %>
 <%@ attribute name="courseIdToShow" required="true" %>
@@ -21,22 +23,27 @@
           <input class="form-control" type="text"
               name="<%=Const.ParamsNames.COURSE_ID%>" id="<%=Const.ParamsNames.COURSE_ID%>"
               value="${courseIdToShow}" data-toggle="tooltip" data-placement="top"
-              title="Enter the identifier of the course, e.g.CS3215-2013Semester1."
-              tabindex="1" placeholder="e.g. CS3215-2013Semester1"
+              title="Enter the identifier of the course, e.g. 2018_Semester-1."
+              tabindex="1" placeholder="e.g. 2018_Semester-1"
               maxlength="<%=FieldValidator.COURSE_ID_MAX_LENGTH%>"/>
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-3 control-label">Course Name:</label>
+      <div class="form-group"
+           title="Click to select course ID"
+           data-toggle="tooltip"
+           data-placement="top">
+        <label class="col-sm-3 control-label">Course Code/Name:</label>
         <div class="col-sm-9">
-          <input class="form-control" type="text"
-              name="<%=Const.ParamsNames.COURSE_NAME%>" id="<%=Const.ParamsNames.COURSE_NAME%>"
-              value="${courseNameToShow}" data-toggle="tooltip" data-placement="top"
-              title="Enter the name of the course, e.g. Software Engineering."
-              tabindex=2 placeholder="e.g. Software Engineering"
-              maxlength="<%=FieldValidator.COURSE_NAME_MAX_LENGTH%>"/>
+        <select id="<%=Const.ParamsNames.COURSE_NAME%>"
+                name="<%=Const.ParamsNames.COURSE_NAME%>"
+                class="form-control" >
+          <c:forEach var="item" items="${Courses.courses}">
+            <option>${item}</option>
+          </c:forEach>
+        </select>
         </div>
       </div>
+
       <div class="form-group">
         <label class="col-sm-3 control-label">Time Zone:</label>
         <div class="col-sm-9">
