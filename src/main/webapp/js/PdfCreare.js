@@ -1,11 +1,20 @@
+// function which runs when download as pdf button is clicked
 function run() {
+
+    // the prm are jsPDF(orientation, unit, format)
+    //{String} orientation
+    // One of "portrait" or "landscape" (or shortcuts "p" (Default), "l")
+    // {String} unit
+    // Measurement unit to be used when coordinates are specified. One of "pt" (points), "mm" (Default), "cm", "in"
+    // {String} format
+    // One of 'a3', 'a4' (Default),'a5' ,'letter' ,'legal'
     var pdf = new jsPDF('p', 'pt', 'letter');
     pdf.setFont("helvetica");
     pdf.setFontSize(12);
 
     source = $('#PDF_PRINT')[0];
 
-    // we support special element handlers. Register them with jQuery-style
+    // jspdf support special element handlers. Register them with jQuery-style
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
     // There is no support for any other type of selectors
     // (class, of compound) at this time.
@@ -34,7 +43,10 @@ function run() {
 
             function (dispose) {
                 // dispose: object with X, Y of the last line add to the PDF
-                //          this allow the insertion of new lines after html
+                //this allow the insertion of new lines after html
+
+
+                //code returns pdf as blob to new window.
                 window.open(pdf.output('bloburl'));
             }, margins);
 }

@@ -1,7 +1,15 @@
 package teammates.storage.entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+/**
+ * Here i generate a list of courses available or instructors to chose from
+ * the format is (course id - course name)
+ *
+ * Don't mind the alphabetical order since Collection.sort method is called at the end.
+ */
 
 public class CourseList {
 
@@ -14,15 +22,6 @@ public class CourseList {
         list.add ("BUSM2283 - Organisations and their Environments");
         list.add ("BUSM2285 - Leadership and Management Skills");
         list.add ("BUSM2294 - Business Case Study");
-        list.add ("BUSM2295 - Textile Quality Management");
-        list.add ("BUSM2367 - The Business Enterprise 1");
-        list.add ("BUSM2370 - The Business Enterprise 2");
-        list.add ("BUSM3136 - Applied Computer Applications");
-        list.add ("BUSM3138 - Building a Winning Team");
-        list.add ("BUSM3139 - Industrial Organisation and Management (Textile)");
-        list.add ("BUSM3150 - Applied Management");
-        list.add ("BUSM3293 - Leadership and Management");
-        list.add ("BUSM4184 - Luxury Fashion Business Management");
         list.add ("BUSM4366 - e Retail for Fashion");
         list.add ("BUSM4561 - Work in Global Society");
         list.add ("BUSM4721 - Global Fashion Enterprise");
@@ -105,7 +104,27 @@ public class CourseList {
         list.add ("TCHE2590 - Cross-Cultural Teaching and Learning");
         list.add ("TCHE2591 - Introduction to STEM Education");
         list.add ("VART3660 - Vietnamese Photography Studio: Ho Chi Minh City through the lens");
+        list.add ("BUSM2295 - Textile Quality Management");
+        list.add ("BUSM2367 - The Business Enterprise 1");
+        list.add ("BUSM2370 - The Business Enterprise 2");
+        list.add ("BUSM3136 - Applied Computer Applications");
+        list.add ("BUSM3138 - Building a Winning Team");
+        list.add ("BUSM3139 - Industrial Organisation and Management (Textile)");
+        list.add ("BUSM3150 - Applied Management");
+        list.add ("BUSM3293 - Leadership and Management");
+        list.add ("BUSM4184 - Luxury Fashion Business Management");
+
+
+        /**
+         * The method to sort courses
+         * */
+        Collections.sort(list);
+
+        /**
+         * The option other
+         * */
         list.add("OTHER");
+
         return list;
     }
 }
