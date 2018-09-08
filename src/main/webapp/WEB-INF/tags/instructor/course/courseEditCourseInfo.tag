@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ tag import="teammates.common.util.Const" %>
 <%@ tag import="teammates.common.util.FieldValidator" %>
+<jsp:useBean id="Courses" class="teammates.storage.entity.CourseList" scope="page"/>
 <%@ taglib tagdir="/WEB-INF/tags/instructor" prefix="ti" %>
 <%@ attribute name="editCourseButton" type="teammates.ui.template.ElementTag" required="true" %>
 <%@ attribute name="deleteCourseButton" type="teammates.ui.template.ElementTag" required="true" %>
@@ -44,11 +45,13 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">Course Name:</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control"
-              name="<%=Const.ParamsNames.COURSE_NAME%>" id="<%=Const.ParamsNames.COURSE_NAME%>"
-              value="${fn:escapeXml(course.name)}"
-              data-toggle="tooltip" data-placement="top" title="The name of the course, e.g. Software Engineering."
-              maxlength="<%=FieldValidator.COURSE_NAME_MAX_LENGTH%>" tabindex="2" disabled>
+          <select id="<%=Const.ParamsNames.COURSE_NAME%>"
+                  name="<%=Const.ParamsNames.COURSE_NAME%>"
+                  class="form-control" disabled>
+            <c:forEach var="item" items="${Courses.courses}" >
+              <option>${item}</option>
+            </c:forEach>
+          </select>
         </div>
       </div>
 
