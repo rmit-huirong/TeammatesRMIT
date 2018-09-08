@@ -1803,16 +1803,6 @@ fieldset {
   transition: background-color 0.3s ease-in-out;
 }
 
-#like-button {
-  border: 0px; 
-  width: 27px;
-  height: 25px;
-  background-image: url(/images/thumbs-up.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  color: #E60028;
-}
-
 #contact button[type="submit"]:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
