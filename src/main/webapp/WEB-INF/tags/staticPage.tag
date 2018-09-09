@@ -42,11 +42,11 @@
               <li class="${currentPage == 'terms' ? 'active' : ''}"><a href="terms.jsp">Terms of Use</a></li>
             </ul>
              <button onclick="document.getElementById('modal-wrapper').style.display='block'" class="btn btn-login">Login</button>  
-          </div>
+          </div>+
         </div>
       </nav>
       <div id="modal-wrapper" class="modal">
-        <form class="modal-content animate" action="/login" name="login">
+        <form class="modal-content animate" id="loginContent" action="/login" name="login">
           <div class="imgcontainer">
            <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
            <img src="/images/avatar-profile.png"  alt="Avatar" class="avatar">
