@@ -25,7 +25,8 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     public String feedbackSessionName;
     public String giverEmail;
     public Text commentText;
-
+    public static int likeCount;
+    
     // Optional fields
     public String feedbackResponseId;
     public String feedbackQuestionId;
@@ -38,7 +39,7 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     public Long feedbackResponseCommentId;
     public String giverSection;
     public String receiverSection;
-
+    
     FeedbackResponseCommentAttributes() {
         giverSection = Const.DEFAULT_SECTION;
         receiverSection = Const.DEFAULT_SECTION;
@@ -49,6 +50,7 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     }
 
     public static FeedbackResponseCommentAttributes valueOf(FeedbackResponseComment comment) {
+        likeCount = comment.getLikeCount();
         return builder(comment.getCourseId(), comment.getFeedbackSessionName(),
                     comment.getGiverEmail(), comment.getCommentText())
                 .withFeedbackResponseId(comment.getFeedbackResponseId())
@@ -62,7 +64,12 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
                 .withVisibilityFollowingFeedbackQuestion(comment.getIsVisibilityFollowingFeedbackQuestion())
                 .withShowCommentTo(comment.getShowCommentTo())
                 .withShowGiverNameTo(comment.getShowGiverNameTo())
+                .withLikeCount(comment.getLikeCount())
                 .build();
+    }
+    
+    public void addLikeCount() {
+        likeCount++;
     }
 
     /**
@@ -255,16 +262,20 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
                     : receiverSection;
             return this;
         }
+        
+        public Builder withLikeCount(int likeCount) {
+            frca.likeCount = likeCount;
+            return this;
+        }
 
         public FeedbackResponseCommentAttributes build() {
             return frca;
         }
-
+       
         private void validateRequiredFields(Object... objects) {
             for (Object object : objects) {
                 Objects.requireNonNull(object, REQUIRED_FIELD_CANNOT_BE_NULL);
             }
         }
     }
-
 }
