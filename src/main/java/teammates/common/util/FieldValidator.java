@@ -236,8 +236,8 @@ public class FieldValidator {
      * <li>Only allow letters, digits, hyphen and dot; Must end with letters
      */
     public static final String REGEX_EMAIL = "^[\\w+-][\\w+!#$%&'*/=?^_`{}~-]*+(\\.[\\w+!#$%&'*/=?^_`{}~-]+)*+"
-                                            + "@([A-Za-z0-9-]+\\.)*[A-Za-z]+$";
-
+            + "@([A-Za-z0-9-]+\\.)*[A-Za-z]+$";
+       
     /**
      * Allows English alphabet, numbers, underscore,  dot and hyphen.
      */

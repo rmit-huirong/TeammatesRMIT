@@ -136,6 +136,7 @@ public final class TestProperties {
 
                 TEST_INSTRUCTOR_ACCOUNT = prop.getProperty("test.instructor.account");
                 TEST_INSTRUCTOR_PASSWORD = prop.getProperty("test.instructor.password");
+               
 
                 TEST_STUDENT1_ACCOUNT = prop.getProperty("test.student1.account");
                 TEST_STUDENT1_PASSWORD = prop.getProperty("test.student1.password");
@@ -148,6 +149,7 @@ public final class TestProperties {
             }
 
             BACKDOOR_KEY = prop.getProperty("test.backdoor.key");
+           
 
             BROWSER = prop.getProperty("test.selenium.browser").toLowerCase();
             FIREFOX_PATH = prop.getProperty("test.firefox.path");
