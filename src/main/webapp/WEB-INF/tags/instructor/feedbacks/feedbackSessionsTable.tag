@@ -16,7 +16,9 @@
       <th id="button_sortname" class="button-sort-none session-name-table-width toggle-sort">
         Session Name <span class="icon-sort unsorted"></span>
       </th>
-      <th>Submissions</th>
+      <th class="toggle-sort"
+          data-toggle-sort-comparator="sortBase"
+          data-toggle-sort-extractor="textExtractor">Submissions<span class="icon-sort unsorted"></span></th>
       <th>Responses</th>
       <th>
         <span title="<%= Const.Tooltips.FEEDBACK_SESSION_RESPONSE_RATE %>" data-toggle="tooltip" data-placement="top">
@@ -30,22 +32,51 @@
     <c:when test="${not empty fsList.existingFeedbackSessions}">
       <c:forEach items="${fsList.existingFeedbackSessions}" var="sessionRow" varStatus="i">
         <tr id="session${i.index}" ${sessionRow.rowAttributes.attributesToString}>
-          <td>${sessionRow.courseId}</td>
-          <td>${sessionRow.name}</td>
-          <td>
+          <td<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>${sessionRow.courseId}</td>
+          <td<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>${sessionRow.name}</td>
+          <td<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>
+            <c:choose>
+              <c:when test="${sessionRow.submissionStatus=='Closed'}">
+                <span style="display: none">z</span>
+              </c:when>
+            </c:choose>
             <span title="${sessionRow.submissionsTooltip}" data-toggle="tooltip" data-placement="top">
               ${sessionRow.submissionStatus}
             </span>
           </td>
-          <td>
+          <td<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>
             <span title="${sessionRow.publishedTooltip}" data-toggle="tooltip" data-placement="top">
               ${sessionRow.publishedStatus}
             </span>
           </td>
-          <td class="session-response-for-test">
+          <td class="session-response-for-test"<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>
             <a oncontextmenu="return false;" href="${sessionRow.href}">Show</a>
           </td>
-          <td class="no-print">
+          <td class="no-print"<c:choose>
+            <c:when test="${sessionRow.submissionStatus=='Closed'}">
+              style="background-color: #cca0a4"
+            </c:when>
+          </c:choose>>
             <tif:feedbackSessionActions actions="${sessionRow.actions}" />
           </td>
         </tr>
