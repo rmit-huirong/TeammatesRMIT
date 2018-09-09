@@ -1983,6 +1983,9 @@ public class Logic {
         feedbackResponseCommentsLogic.deleteDocumentByCommentId(commentId);
     }
 
+    public void addLikeCountByCommentId(long commentId) {
+        feedbackResponseCommentsLogic.addLikeCountByCommentId(commentId);
+    }
     /**
      * Search for FeedbackResponseComment. Preconditions: all parameters are non-null.
      * @param instructors   a list of InstructorAttributes associated to a googleId,
@@ -2198,5 +2201,4 @@ public class Logic {
         Assumption.assertNotNull(teamName);
         return studentsLogic.getSectionForTeam(courseId, teamName);
     }
-
 }

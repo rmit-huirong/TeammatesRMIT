@@ -52,15 +52,13 @@
               title="<%= Const.Tooltips.COMMENT_DELETE %>">
             <span class="glyphicon glyphicon-trash glyphicon-primary"></span>
           </a>
-          <c:set var="addLikeUri" value="<%= Const.ActionURIs.INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_ADD_LIKE %>" />
-          <c:set var="cancelLikeUri" value="<%= Const.ActionURIs.INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_CANCEL_LIKE %>" />
-          <a href="${frc.editDeleteEnabled ? cancelLikeUri : 'javascript:;'}"
+          <a href="${'javascript:;'}"
               type="button"
               id="commentdelete-${divId}"
               class="btn btn-default btn-xs icon-button<c:if test="${not frc.editDeleteEnabled}"> disabled</c:if>"
               data-toggle="tooltip"
               data-placement="top"
-              title="<%= Const.Tooltips.COMMENT_ADD_LIKE %>">
+              title="<%= Const.Tooltips.COMMENT_LIKE %>">
             <span class="glyphicon glyphicon-heart glyphicon-primary"></span>
           </a>
           <input type="hidden" name="<%= Const.ParamsNames.FEEDBACK_SESSION_INDEX %>" value="${firstIndex}">

@@ -189,6 +189,10 @@ public final class FeedbackResponseCommentsLogic {
     public void deleteDocumentByCommentId(long commentId) {
         frcDb.deleteDocumentByCommentId(commentId);
     }
+    
+    public void addLikeCountByCommentId(long commentId) {
+        frcDb.addLikeCountByCommentId(commentId);
+    }
 
     /**
      * Returns true if the comment's giver name is visible to certain user.
