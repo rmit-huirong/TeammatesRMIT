@@ -1315,6 +1315,14 @@ Default to alert color for visibility titles used within an alert context.
     
 }
 
+#loginContent {
+ 
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%;
+    padding-bottom: 30px;
+}
 
 .modal-header {
     border-top-left-radius: 5px;
@@ -1335,15 +1343,6 @@ Default to alert color for visibility titles used within an alert context.
     vertical-align: middle;
 }
 
-
-.modal-content {
- 
-    background-color: #fefefe;
-    margin: 4% auto 15% auto;
-    border: 1px solid #888;
-    width: 40%;
-    padding-bottom: 30px;
-}
 
 .imgcontainer{
     text-align: center;
