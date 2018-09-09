@@ -42,7 +42,7 @@
               <li class="${currentPage == 'terms' ? 'active' : ''}"><a href="terms.jsp">Terms of Use</a></li>
             </ul>
              <button onclick="document.getElementById('modal-wrapper').style.display='block'" class="btn btn-login">Login</button>  
-          </div>
+          </div>+
         </div>
       </nav>
       <div id="modal-wrapper" class="modal">
