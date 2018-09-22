@@ -66,8 +66,6 @@ public class FeedbackResponseComment extends BaseEntity {
 
     /** The time in which the comment is last edited. */
     private Date lastEditedAt;
-    
-    private int likeCount;
 
     @SuppressWarnings("unused")
     private FeedbackResponseComment() {
@@ -94,20 +92,6 @@ public class FeedbackResponseComment extends BaseEntity {
         this.isVisibilityFollowingFeedbackQuestion = false;
         this.lastEditorEmail = lastEditorEmail == null ? giverEmail : lastEditorEmail;
         this.lastEditedAt = lastEditedAt == null ? this.createdAt : TimeHelper.convertInstantToDate(lastEditedAt);
-        this.likeCount = 0;
-    }
-
-    public int getLikeCount() {
-        return likeCount;
-    }
-    
-    public void setLikeCount(int likeCount) {
-        this.likeCount = likeCount;
-    }
-    
-    public int addLikeCount() {
-        likeCount++;
-        return likeCount;
     }
     
     /**

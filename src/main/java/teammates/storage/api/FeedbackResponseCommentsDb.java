@@ -42,7 +42,6 @@ public class FeedbackResponseCommentsDb extends EntitiesDb<FeedbackResponseComme
 
     private static final Logger log = Logger.getLogger();
 
-    protected Map<Long,Integer> countMap = new HashMap<Long,Integer>();
     /**
      * Preconditions:
      * <br> * {@code entityToAdd} is not null and has valid data.
@@ -81,10 +80,6 @@ public class FeedbackResponseCommentsDb extends EntitiesDb<FeedbackResponseComme
         deleteDocument(Const.SearchIndex.FEEDBACK_RESPONSE_COMMENT, String.valueOf(commentId));
     }
 
-    public void addLikeCountByCommentId(long commentId) {
-        int newCount = countMap.get(commentId) + 1;
-        countMap.put(commentId, newCount);
-    }
     /**
      * Preconditions: <br>
      * * All parameters are non-null.

@@ -52,15 +52,6 @@
               title="<%= Const.Tooltips.COMMENT_DELETE %>">
             <span class="glyphicon glyphicon-trash glyphicon-primary"></span>
           </a>
-          <a href="${'javascript:;'}"
-              type="button"
-              id="commentdelete-${divId}"
-              class="btn btn-default btn-xs icon-button<c:if test="${not frc.editDeleteEnabled}"> disabled</c:if>"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="<%= Const.Tooltips.COMMENT_LIKE %>">
-            <span class="glyphicon glyphicon-heart glyphicon-primary"></span>
-          </a>
           <input type="hidden" name="<%= Const.ParamsNames.FEEDBACK_SESSION_INDEX %>" value="${firstIndex}">
           <input type="hidden" name="<%= Const.ParamsNames.FEEDBACK_RESPONSE_ID %>" value="${frc.feedbackResponseId}">
           <input type="hidden" name="<%= Const.ParamsNames.FEEDBACK_RESPONSE_COMMENT_ID %>" value="${frc.commentId}">

@@ -25,7 +25,6 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     public String feedbackSessionName;
     public String giverEmail;
     public Text commentText;
-    public static int likeCount;
     
     // Optional fields
     public String feedbackResponseId;
@@ -50,7 +49,6 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     }
 
     public static FeedbackResponseCommentAttributes valueOf(FeedbackResponseComment comment) {
-        likeCount = comment.getLikeCount();
         return builder(comment.getCourseId(), comment.getFeedbackSessionName(),
                     comment.getGiverEmail(), comment.getCommentText())
                 .withFeedbackResponseId(comment.getFeedbackResponseId())
@@ -64,14 +62,9 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
                 .withVisibilityFollowingFeedbackQuestion(comment.getIsVisibilityFollowingFeedbackQuestion())
                 .withShowCommentTo(comment.getShowCommentTo())
                 .withShowGiverNameTo(comment.getShowGiverNameTo())
-                .withLikeCount(comment.getLikeCount())
                 .build();
     }
     
-    public void addLikeCount() {
-        likeCount++;
-    }
-
     /**
      * Returns new builder instance with default values for optional fields.
      *
@@ -260,11 +253,6 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
             frca.receiverSection = receiverSection == null
                     ? Const.DEFAULT_SECTION
                     : receiverSection;
-            return this;
-        }
-        
-        public Builder withLikeCount(int likeCount) {
-            frca.likeCount = likeCount;
             return this;
         }
 
