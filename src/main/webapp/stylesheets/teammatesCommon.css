@@ -7,11 +7,11 @@ body {
 }
 
 .navbar-inverse {
-    background-image: linear-gradient(to bottom,#000053 0,#000053 100%);
+    background-image: linear-gradient(to bottom, #000053 0, #000053 100%);
 }
- 
-.navbar-inverse .navbar-nav>.active>a {
-    background-image: linear-gradient(to bottom,#E60028 0,#E60028 100%);
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-image: linear-gradient(to bottom, #E60028 0, #E60028 100%);
 }
 
 code {
@@ -1697,13 +1697,11 @@ Prevent Long URL From Breaking Out of Container
   margin:auto;
 }
 
-#right_img_about{
-  margin:auto;
+#right_img_about {
+    margin: auto;
 }
 
-
-.container_form {
-  
+.container_form {  
   font-weight: 100;
   font-size: 12px;
   line-height: 30px;
