@@ -40,28 +40,18 @@
           <a class="nav help" href="/instructorHelp.jsp" target="_blank" rel="noopener noreferrer">Help</a>
         </li>
       </ul>
-      
-      <ul class="nav navbar-nav pull-right">
-
-      </ul>
        <ul class="nav navbar-nav pull-right">
-
-        <li>
-          <a id="btnLogout" class="nav logout" href="<%= Const.ActionURIs.LOGOUT %>">Logout
-
-            (<span class="text-info" data-toggle="tooltip" title="${data.account.googleId}" data-placement="bottom">
-              ${data.account.truncatedGoogleId}
-            </span>)
-          </a>
-        </li>
-        <li>
-        </li>
+         <li>
+           <a id="btnLogout" class="nav logout" href="<%= Const.ActionURIs.LOGOUT %>">
+             Logout (<span class="text-info" data-toggle="tooltip" title="${data.account.googleId}" data-placement="bottom">
+             ${data.account.truncatedGoogleId}
+           </span>)
+           </a>
+         </li>
       </ul>
-      
       <div>
-       <x:search></x:search>
+        <x:search></x:search>
       </div>
-
     </div>
   </div>
 </div>
