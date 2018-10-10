@@ -1310,7 +1310,6 @@ Default to alert color for visibility titles used within an alert context.
 ///////////////////////////////////////////////////////// */
 
 #modal-wrapper {
- 
     display:none;
     position: fixed;
     z-index:1;
@@ -1319,12 +1318,10 @@ Default to alert color for visibility titles used within an alert context.
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0,0.4);
-    
+    background-color: rgba(0,0,0,0,0.4);    
 }
 
 #loginContent {
- 
     background-color: #fefefe;
     margin: 4% auto 15% auto;
     border: 1px solid #888;
@@ -1352,18 +1349,18 @@ Default to alert color for visibility titles used within an alert context.
 }
 
 
-.imgcontainer{
+.imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
 }
 
-.btnContainer{
+.btnContainer {
     text-align: center;
     margin-top: 50px;
 }
 
-.avatar{
+.avatar {
     width: 100px;
     height: 100px;
     margin-top: 20px;
@@ -1371,21 +1368,19 @@ Default to alert color for visibility titles used within an alert context.
     border-radius: 50%;
 }
 
-.btn-studentLogin{
+.btn-studentLogin {
     margin-right: 10px;
     background-color:#E60028;
     color: #FEFEFE;
 }
 
-.btn-instructorLogin{
+.btn-instructorLogin {
     margin-left: 10px;
     background-color:#E60028;
     color: #FEFEFE;
 }
 
-
-.close{
-
+.close {
     position:absolute;
     right: 25px;
     top: 0;
@@ -1394,8 +1389,7 @@ Default to alert color for visibility titles used within an alert context.
     font-weight: bold;
 }
 
-.close:hover,.close:focus{
- 
+.close:hover, .close:focus {
     color:red;
     cursor: pointer;
 }
@@ -1649,52 +1643,59 @@ Prevent Long URL From Breaking Out of Container
     content: '\e086';
 }
 
-.image_frame{
-  border: 1px solid #CCC;
+.image_frame {
+    border: 1px solid #CCC;
 }
-.tile_name{
-  padding-top:10px;
-  text-align:center;
+
+.tile_name {
+    padding-top: 10px;
+    text-align: center;
 }
+
 .Email_us_sec {
     padding:15px;
     border: 5px solid black;
     border-radius: 20px;
     padding-top: 20px;
 }
+
 .Email_us_sec:hover {
     box-shadow: inset -3px -4px 20px 0px grey;
 }
+
 .Join_blog {
     padding:15px;
     border: 5px solid black;
     border-radius: 20px;
     padding-top: 20px;
 }
+
 .Join_blog:hover {
     box-shadow: inset -3px -4px 20px 0px grey;
 }
+
 .Join_us {
     padding:15px;
     border: 5px solid black;
     border-radius: 20px;
     padding-top: 20px;
 }
+
 .Join_us:hover {
     box-shadow: inset -3px -4px 20px 0px grey;
 }
+
 #email_details {
     font-size: 11px;
-    color:#238ce8;
+    color: #238ce8;
 }
 
-
 #left_img_about{
-  margin:auto;
+    margin: auto;
 }
 
 #middle_img_about{
-  margin:auto;
+    margin: auto;
 }
 
 #right_img_about {
@@ -1702,14 +1703,14 @@ Prevent Long URL From Breaking Out of Container
 }
 
 .container_form {  
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
-  color: #777;
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
 
 #contact input[type="text"],
@@ -1722,32 +1723,32 @@ Prevent Long URL From Breaking Out of Container
 }
 
 #contact {
-  background: #F9F9F9;
-  padding: 25px;
-  margin: 100px 0;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 100px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2), 0 5px 5px 0 rgba(0, 0, 0, .24);
 }
 
 #contact h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px;
 }
 
 #contact h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 fieldset {
-  border: medium none !important;
-  margin: 0 0 10px;
-  min-width: 100%;
-  padding: 0;
-  width: 100%;
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
 }
 
 #contact input[type="text"],
@@ -1755,11 +1756,11 @@ fieldset {
 #contact input[type="tel"],
 #contact input[type="url"],
 #contact textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #FFF;
-  margin: 0 0 5px;
-  padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
 }
 
 #contact input[type="text"]:hover,
@@ -1767,68 +1768,68 @@ fieldset {
 #contact input[type="tel"]:hover,
 #contact input[type="url"]:hover,
 #contact textarea:hover {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa;
+    -webkit-transition: border-color .3s ease-in-out;
+    -moz-transition: border-color .3s ease-in-out;
+    transition: border-color .3s ease-in-out;
+    border: 1px solid #aaa;
 }
 
 #contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none;
+    height: 100px;
+    max-width: 100%;
+    resize: none;
 }
 
 #contact button[type="submit"] {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  background: #4CAF50;
-  color: #FFF;
-  margin: 0 0 5px;
-  padding: 10px;
-  font-size: 15px;
-  box-shadow: inset 0px 0px 3px rgba(255,255,255,.5);
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    box-shadow: inset 0px 0px 3px rgba(255,255,255,.5);
 }
 
 #contact button[type="submit"]:hover {
-  background: #43A047;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 #contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .copyright {
-  text-align: center;
+    text-align: center;
 }
 
 #contact input:focus,
 #contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa;
+    outline: 0;
+    border: 1px solid #aaa;
 }
 
 ::-webkit-input-placeholder {
-  color: #888;
+    color: #888;
 }
 
 :-moz-placeholder {
-  color: #888;
+    color: #888;
 }
 
 ::-moz-placeholder {
-  color: #888;
+    color: #888;
 }
 
 :-ms-input-placeholder {
-  color: #888;
+    color: #888;
 }
 
 .padding-searchbar {
-  padding-top:3%;
+    padding-top: 3%;
 }
 
