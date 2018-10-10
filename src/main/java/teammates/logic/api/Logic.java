@@ -492,7 +492,7 @@ public class Logic {
             throws InvalidParametersException {
 
         List<String> invalidityInfo = instructorsLogic.getInvalidityInfoForNewInstructorData(name,
-                                                                                              institute, email);
+                institute, email);
 
         if (!invalidityInfo.isEmpty()) {
             throw new InvalidParametersException(invalidityInfo);
@@ -594,7 +594,7 @@ public class Logic {
      *         Returns an empty list if none found.
      */
     public Map<String, CourseSummaryBundle> getCourseSummariesWithoutStatsForInstructor(String googleId,
-                                                                                            boolean omitArchived) {
+                                                                                        boolean omitArchived) {
 
         Assumption.assertNotNull(googleId);
         return coursesLogic.getCoursesSummaryWithoutStatsForInstructor(googleId, omitArchived);
@@ -732,8 +732,8 @@ public class Logic {
     }
 
     public void createStudentWithoutDocument(StudentAttributes student) throws EntityAlreadyExistsException,
-                                                                               InvalidParametersException,
-                                                                               EntityDoesNotExistException {
+            InvalidParametersException,
+            EntityDoesNotExistException {
         Assumption.assertNotNull(student);
         studentsLogic.createStudentCascadeWithoutDocument(student);
     }
@@ -923,7 +923,7 @@ public class Logic {
     }
 
     public void resetStudentGoogleId(String originalEmail, String courseId) throws InvalidParametersException,
-                                                                                   EntityDoesNotExistException {
+            EntityDoesNotExistException {
         Assumption.assertNotNull(originalEmail);
         Assumption.assertNotNull(courseId);
         studentsLogic.resetStudentGoogleId(originalEmail, courseId, true);
@@ -1125,7 +1125,7 @@ public class Logic {
      * * All parameters are non-null.
      */
     public FeedbackSessionAttributes copyFeedbackSession(String newFeedbackSessionName, String newCourseId,
-            ZoneId newTimeZone, String feedbackSessionName, String courseId, String instructorEmail)
+                                                         ZoneId newTimeZone, String feedbackSessionName, String courseId, String instructorEmail)
             throws EntityAlreadyExistsException, InvalidParametersException, EntityDoesNotExistException {
 
         Assumption.assertNotNull(newFeedbackSessionName);
@@ -1234,14 +1234,14 @@ public class Logic {
 
     public FeedbackSessionQuestionsBundle getFeedbackSessionQuestionsBundleForInstructor(
             String feedbackSessionName, String courseId, String questionId, String userEmail)
-                throws EntityDoesNotExistException {
+            throws EntityDoesNotExistException {
 
         Assumption.assertNotNull(feedbackSessionName);
         Assumption.assertNotNull(courseId);
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic
-                   .getFeedbackSessionQuestionsForInstructor(feedbackSessionName, courseId, questionId, userEmail);
+                .getFeedbackSessionQuestionsForInstructor(feedbackSessionName, courseId, questionId, userEmail);
     }
 
     /**
@@ -1268,14 +1268,14 @@ public class Logic {
 
     public FeedbackSessionQuestionsBundle getFeedbackSessionQuestionsBundleForStudent(
             String feedbackSessionName, String courseId, String questionId, String userEmail)
-                throws EntityDoesNotExistException {
+            throws EntityDoesNotExistException {
 
         Assumption.assertNotNull(feedbackSessionName);
         Assumption.assertNotNull(courseId);
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic
-                   .getFeedbackSessionQuestionsForStudent(feedbackSessionName, courseId, questionId, userEmail);
+                .getFeedbackSessionQuestionsForStudent(feedbackSessionName, courseId, questionId, userEmail);
     }
 
     public FeedbackQuestionAttributes getFeedbackQuestion(String feedbackSessionName,
@@ -1370,14 +1370,14 @@ public class Logic {
      * * All parameters are non-null.
      */
     public void updateFeedbackSession(FeedbackSessionAttributes updatedSession) throws InvalidParametersException,
-                                                                                       EntityDoesNotExistException {
+            EntityDoesNotExistException {
 
         Assumption.assertNotNull(updatedSession);
         feedbackSessionsLogic.updateFeedbackSession(updatedSession);
     }
 
     public void updateRespondents(String feedbackSessionName, String courseId) throws InvalidParametersException,
-                                                                                      EntityDoesNotExistException {
+            EntityDoesNotExistException {
         Assumption.assertNotNull(feedbackSessionName);
         Assumption.assertNotNull(courseId);
 
@@ -1508,7 +1508,7 @@ public class Logic {
         Assumption.assertNotNull(instructorEmail);
 
         return feedbackQuestionsLogic.copyFeedbackQuestion(feedbackQuestionId, feedbackSessionName,
-                                                           courseId, instructorEmail);
+                courseId, instructorEmail);
     }
 
     /**
@@ -1639,7 +1639,7 @@ public class Logic {
         Assumption.assertNotNull(roster);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForStudent(feedbackSessionName, courseId,
-                                                                         userEmail, roster);
+                userEmail, roster);
     }
 
     /**
@@ -1658,8 +1658,8 @@ public class Logic {
         Assumption.assertNotNull(viewType);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorWithinRangeFromView(feedbackSessionName,
-                                                                                               courseId, userEmail,
-                                                                                               range, viewType);
+                courseId, userEmail,
+                range, viewType);
     }
 
     /**
@@ -1678,7 +1678,7 @@ public class Logic {
         Assumption.assertNotNull(viewType);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorInSectionWithinRangeFromView(
-                                        feedbackSessionName, courseId, userEmail, section, range, viewType);
+                feedbackSessionName, courseId, userEmail, section, range, viewType);
     }
 
     /**
@@ -1696,7 +1696,7 @@ public class Logic {
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorFromSectionWithinRange(
-                                        feedbackSessionName, courseId, userEmail, section, range);
+                feedbackSessionName, courseId, userEmail, section, range);
     }
 
     /**
@@ -1714,7 +1714,7 @@ public class Logic {
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorToSectionWithinRange(
-                                        feedbackSessionName, courseId, userEmail, section, range);
+                feedbackSessionName, courseId, userEmail, section, range);
     }
 
     /**
@@ -1733,7 +1733,7 @@ public class Logic {
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorFromQuestion(feedbackSessionName, courseId,
-                                                                                        userEmail, questionId);
+                userEmail, questionId);
     }
 
     /**
@@ -1745,8 +1745,8 @@ public class Logic {
      * * All parameters are non-null.
      */
     public FeedbackSessionResultsBundle getFeedbackSessionResultsForInstructorFromQuestionInSection(
-                                    String feedbackSessionName, String courseId, String userEmail,
-                                    String questionId, String selectedSection)
+            String feedbackSessionName, String courseId, String userEmail,
+            String questionId, String selectedSection)
             throws EntityDoesNotExistException {
 
         Assumption.assertNotNull(feedbackSessionName);
@@ -1754,8 +1754,8 @@ public class Logic {
         Assumption.assertNotNull(userEmail);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorFromQuestionInSection(
-                                            feedbackSessionName, courseId, userEmail,
-                                            questionId, selectedSection);
+                feedbackSessionName, courseId, userEmail,
+                questionId, selectedSection);
     }
 
     /**
@@ -1793,7 +1793,7 @@ public class Logic {
         Assumption.assertNotNull(section);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorInSection(feedbackSessionName, courseId,
-                                                                                     userEmail, section);
+                userEmail, section);
     }
 
     /**
@@ -1814,7 +1814,7 @@ public class Logic {
         Assumption.assertNotNull(section);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorFromSection(feedbackSessionName, courseId,
-                                                                                       userEmail, section);
+                userEmail, section);
     }
 
     /**
@@ -1835,7 +1835,7 @@ public class Logic {
         Assumption.assertNotNull(section);
 
         return feedbackSessionsLogic.getFeedbackSessionResultsForInstructorToSection(feedbackSessionName, courseId,
-                                                                                     userEmail, section);
+                userEmail, section);
     }
 
     public FeedbackResponseAttributes getFeedbackResponse(String feedbackResponseId) {
@@ -1990,7 +1990,7 @@ public class Logic {
      * @return Null if no match found
      */
     public FeedbackResponseCommentSearchResultBundle searchFeedbackResponseComments(String queryString,
-                                                                         List<InstructorAttributes> instructors) {
+                                                                                    List<InstructorAttributes> instructors) {
         Assumption.assertNotNull(queryString);
         Assumption.assertNotNull(instructors);
         return feedbackResponseCommentsLogic.searchFeedbackResponseComments(queryString, instructors);
@@ -2153,7 +2153,7 @@ public class Logic {
     }
 
     public List<FeedbackResponseAttributes>
-            getFeedbackResponsesForSession(String feedbackSessionName, String courseId) {
+    getFeedbackResponsesForSession(String feedbackSessionName, String courseId) {
         Assumption.assertNotNull(feedbackSessionName);
         Assumption.assertNotNull(courseId);
         return feedbackResponsesLogic.getFeedbackResponsesForSession(feedbackSessionName, courseId);
@@ -2198,4 +2198,5 @@ public class Logic {
         Assumption.assertNotNull(teamName);
         return studentsLogic.getSectionForTeam(courseId, teamName);
     }
+
 }

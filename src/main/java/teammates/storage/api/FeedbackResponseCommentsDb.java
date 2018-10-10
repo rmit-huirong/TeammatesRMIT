@@ -105,7 +105,7 @@ public class FeedbackResponseCommentsDb extends EntitiesDb<FeedbackResponseComme
 
         return makeAttributesOrNull(getFeedbackResponseCommentEntity(feedbackResponseId, giverEmail, createdAt),
                 "Trying to get non-existent response comment: " + feedbackResponseId + "/from: " + giverEmail
-                + "created at: " + createdAt);
+                        + "created at: " + createdAt);
     }
 
     /**
@@ -121,7 +121,7 @@ public class FeedbackResponseCommentsDb extends EntitiesDb<FeedbackResponseComme
 
         return makeAttributesOrNull(getFeedbackResponseCommentEntity(courseId, createdAt, giverEmail),
                 "Trying to get non-existent response comment: from: " + giverEmail + " in the course " + courseId
-                + " created at: " + createdAt);
+                        + " created at: " + createdAt);
     }
 
     /**
@@ -278,7 +278,7 @@ public class FeedbackResponseCommentsDb extends EntitiesDb<FeedbackResponseComme
 
         saveEntities(responseComments);
         log.info("updating last editor email from: " + oldEmail + " to: " + updatedEmail
-                 + " for feedback response comments in the course: " + courseId);
+                + " for feedback response comments in the course: " + courseId);
     }
 
     /*

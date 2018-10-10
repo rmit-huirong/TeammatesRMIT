@@ -354,4 +354,5 @@ public abstract class EntitiesDb<E extends BaseEntity, A extends EntityAttribute
             log.info("Unable to delete document in the index: " + indexName + " with document id " + documentId);
         }
     }
+
 }
