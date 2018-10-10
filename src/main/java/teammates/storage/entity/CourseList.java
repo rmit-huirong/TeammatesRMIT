@@ -7,13 +7,13 @@ import java.util.List;
 /**
  * Here i generate a list of courses available or instructors to chose from
  * the format is (course id - course name)
- *
  * Don't mind the alphabetical order since Collection.sort method is called at the end.
  */
 
 public class CourseList {
 
     public List<String> getCourses() {
+
         List<String> list = new ArrayList<String>();
         list.add("ACCT1044 - Accounting in Organisations and Society");
         list.add("ACCT2087 - Business Frameworks");
