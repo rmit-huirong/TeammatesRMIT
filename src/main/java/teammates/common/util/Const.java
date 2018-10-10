@@ -1,10 +1,15 @@
 package teammates.common.util;
 
-import teammates.common.datatransfer.FeedbackParticipantType;
-
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import teammates.common.datatransfer.FeedbackParticipantType;
 
 /**
  * Stores constants that are widely used across classes.
