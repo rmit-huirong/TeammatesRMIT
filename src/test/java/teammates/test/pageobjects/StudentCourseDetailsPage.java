@@ -1,15 +1,37 @@
 package teammates.test.pageobjects;
 
-public class StudentCourseDetailsPage extends AppPage {
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-    public StudentCourseDetailsPage(Browser browser) {
+public class StudentCourseJoinConfirmationPage extends AppPage {
+    @FindBy(id = "button_confirm")
+    private WebElement confirmButton;
+
+    @FindBy(id = "button_cancel")
+    private WebElement cancelButton;
+
+    public StudentCourseJoinConfirmationPage(Browser browser) {
         super(browser);
     }
 
     @Override
-    protected boolean containsExpectedPageContents() {
-        // Intentional check for opening h1 and not closing h1 because the following content is not static
-        return getPageSource().contains("<h1>Team Details for");
+    public boolean containsExpectedPageContents() {
+        return getPageSource().contains("<h4>Confirm your Google account</h4>");
     }
 
+    public StudentHomePage clickConfirmButton() {
+        return clickConfirmButton(StudentHomePage.class);
+    }
+
+    public <T extends AppPage> T clickConfirmButton(Class<T> typeOfPage) {
+        click(confirmButton);
+        waitForPageToLoad();
+        return changePageType(typeOfPage);
+    }
+
+    public LoginPage clickCancelButton() {
+        click(cancelButton);
+        waitForPageToLoad();
+        return createCorrectLoginPageType(browser);
+    }
 }
