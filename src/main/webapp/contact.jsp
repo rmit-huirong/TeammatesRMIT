@@ -9,8 +9,7 @@
   <main class="container">
     <h1 class="color-orange">
       </br>
-    </h1>
-    
+    </h1>    
   <div class="container-fluid">
   <div class="row">
     <div class="col-xs-2 col-xs-offset-2 Email_us_sec"><a href="#contact"><img class="img-responsive" id="left_img_about" src="images/contact.png">
@@ -39,8 +38,7 @@
       </div>
     </div>
   </div>
-  </div>
-  
+  </div>  
     <div class="container_form">  
       <form id="contact" action="" method="post">
       <h3>Contact Us</h3>
@@ -61,9 +59,6 @@
         <button name="submit" class="btn btn-success btn-block" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
       </fieldset>
       </form>
-    </div>
-   
-    
-    
+    </div>    
   </main>
 </t:staticPage>
