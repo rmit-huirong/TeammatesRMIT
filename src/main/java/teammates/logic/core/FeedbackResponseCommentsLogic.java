@@ -57,11 +57,11 @@ public final class FeedbackResponseCommentsLogic {
             try {
 
                 FeedbackResponseCommentAttributes existingComment =
-                        frcDb.getFeedbackResponseComment(frComment.feedbackResponseId, frComment.giverEmail,
-                                frComment.createdAt);
+                                  frcDb.getFeedbackResponseComment(frComment.feedbackResponseId, frComment.giverEmail,
+                                                                   frComment.createdAt);
                 if (existingComment == null) {
                     existingComment = frcDb.getFeedbackResponseComment(frComment.courseId, frComment.createdAt,
-                            frComment.giverEmail);
+                                                                       frComment.giverEmail);
                 }
                 frComment.setId(existingComment.getId());
 
@@ -92,7 +92,7 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     public List<FeedbackResponseCommentAttributes> getFeedbackResponseCommentForSessionInSection(String courseId,
-                                                                                                 String feedbackSessionName, String section) {
+                                                           String feedbackSessionName, String section) {
         if (section == null) {
             return getFeedbackResponseCommentForSession(courseId, feedbackSessionName);
         }
@@ -131,8 +131,8 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     public FeedbackResponseCommentAttributes updateFeedbackResponseComment(
-            FeedbackResponseCommentAttributes feedbackResponseComment)
-            throws InvalidParametersException, EntityDoesNotExistException {
+                                                     FeedbackResponseCommentAttributes feedbackResponseComment)
+                                                     throws InvalidParametersException, EntityDoesNotExistException {
         return frcDb.updateFeedbackResponseComment(feedbackResponseComment);
     }
 
@@ -156,7 +156,7 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     public FeedbackResponseCommentSearchResultBundle searchFeedbackResponseComments(String queryString,
-                                                                                    List<InstructorAttributes> instructors) {
+                                                             List<InstructorAttributes> instructors) {
         return frcDb.search(queryString, instructors);
     }
 
@@ -194,7 +194,7 @@ public final class FeedbackResponseCommentsLogic {
      * Returns true if the comment's giver name is visible to certain user.
      */
     public boolean isNameVisibleToUser(FeedbackResponseCommentAttributes comment, FeedbackResponseAttributes response,
-                                       String userEmail, CourseRoster roster) {
+                                   String userEmail, CourseRoster roster) {
         List<FeedbackParticipantType> showNameTo = comment.showGiverNameTo;
         //in the old ver, name is always visible
         if (showNameTo == null || comment.isVisibilityFollowingFeedbackQuestion) {
@@ -210,7 +210,7 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     private boolean isFeedbackParticipantNameVisibleToUser(FeedbackResponseAttributes response,
-                                                           String userEmail, CourseRoster roster, List<FeedbackParticipantType> showNameTo) {
+            String userEmail, CourseRoster roster, List<FeedbackParticipantType> showNameTo) {
         String responseGiverTeam = "giverTeam";
         if (roster.getStudentForEmail(response.giver) != null) {
             responseGiverTeam = roster.getStudentForEmail(response.giver).team;
@@ -225,38 +225,38 @@ public final class FeedbackResponseCommentsLogic {
         }
         for (FeedbackParticipantType type : showNameTo) {
             switch (type) {
-                case INSTRUCTORS:
-                    if (roster.getInstructorForEmail(userEmail) != null) {
-                        return true;
-                    }
-                    break;
-                case OWN_TEAM_MEMBERS:
-                    if (responseGiverTeam.equals(currentUserTeam)) {
-                        return true;
-                    }
-                    break;
-                case RECEIVER:
-                    if (userEmail.equals(response.recipient)) {
-                        return true;
-                    }
-                    break;
-                case RECEIVER_TEAM_MEMBERS:
-                    if (responseRecipientTeam.equals(currentUserTeam)) {
-                        return true;
-                    }
-                    break;
-                case STUDENTS:
-                    if (roster.getStudentForEmail(userEmail) != null) {
-                        return true;
-                    }
-                    break;
-                case GIVER:
-                    if (userEmail.equals(response.giver)) {
-                        return true;
-                    }
-                    break;
-                default:
-                    break;
+            case INSTRUCTORS:
+                if (roster.getInstructorForEmail(userEmail) != null) {
+                    return true;
+                }
+                break;
+            case OWN_TEAM_MEMBERS:
+                if (responseGiverTeam.equals(currentUserTeam)) {
+                    return true;
+                }
+                break;
+            case RECEIVER:
+                if (userEmail.equals(response.recipient)) {
+                    return true;
+                }
+                break;
+            case RECEIVER_TEAM_MEMBERS:
+                if (responseRecipientTeam.equals(currentUserTeam)) {
+                    return true;
+                }
+                break;
+            case STUDENTS:
+                if (roster.getStudentForEmail(userEmail) != null) {
+                    return true;
+                }
+                break;
+            case GIVER:
+                if (userEmail.equals(response.giver)) {
+                    return true;
+                }
+                break;
+            default:
+                break;
             }
         }
         return false;
@@ -267,8 +267,8 @@ public final class FeedbackResponseCommentsLogic {
      * @return true/false
      */
     public boolean isResponseCommentVisibleForUser(String userEmail, UserRole role,
-                                                   StudentAttributes student, Set<String> studentsEmailInTeam, FeedbackResponseAttributes response,
-                                                   FeedbackQuestionAttributes relatedQuestion, FeedbackResponseCommentAttributes relatedComment) {
+            StudentAttributes student, Set<String> studentsEmailInTeam, FeedbackResponseAttributes response,
+            FeedbackQuestionAttributes relatedQuestion, FeedbackResponseCommentAttributes relatedComment) {
 
         if (response == null || relatedQuestion == null) {
             return false;
@@ -276,7 +276,7 @@ public final class FeedbackResponseCommentsLogic {
 
         boolean isVisibilityFollowingFeedbackQuestion = relatedComment.isVisibilityFollowingFeedbackQuestion;
         boolean isVisibleToGiver = isVisibilityFollowingFeedbackQuestion
-                || relatedComment.isVisibleTo(FeedbackParticipantType.GIVER);
+                                 || relatedComment.isVisibleTo(FeedbackParticipantType.GIVER);
 
         boolean isUserInstructor = role == UserRole.INSTRUCTOR;
         boolean isUserStudent = role == UserRole.STUDENT;
@@ -291,26 +291,26 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     private boolean isVisibleToUserTeam(StudentAttributes student, Set<String> studentsEmailInTeam,
-                                        FeedbackResponseAttributes response, FeedbackQuestionAttributes relatedQuestion,
-                                        FeedbackResponseCommentAttributes relatedComment, boolean isUserStudent) {
+            FeedbackResponseAttributes response, FeedbackQuestionAttributes relatedQuestion,
+            FeedbackResponseCommentAttributes relatedComment, boolean isUserStudent) {
 
         boolean isUserInResponseRecipientTeamAndRelatedResponseCommentVisibleToRecipients =
                 isUserStudent
-                        && relatedQuestion.recipientType == FeedbackParticipantType.TEAMS
-                        && isResponseCommentVisibleTo(relatedQuestion, relatedComment,
-                        FeedbackParticipantType.RECEIVER)
-                        && response.recipient.equals(student.team);
+                && relatedQuestion.recipientType == FeedbackParticipantType.TEAMS
+                && isResponseCommentVisibleTo(relatedQuestion, relatedComment,
+                                              FeedbackParticipantType.RECEIVER)
+                && response.recipient.equals(student.team);
 
         boolean isUserInResponseGiverTeamAndRelatedResponseCommentVisibleToGiversTeamMembers =
                 (relatedQuestion.giverType == FeedbackParticipantType.TEAMS
-                        || isResponseCommentVisibleTo(relatedQuestion, relatedComment,
-                        FeedbackParticipantType.OWN_TEAM_MEMBERS))
-                        && studentsEmailInTeam.contains(response.giver);
+                || isResponseCommentVisibleTo(relatedQuestion, relatedComment,
+                                              FeedbackParticipantType.OWN_TEAM_MEMBERS))
+                && studentsEmailInTeam.contains(response.giver);
 
         boolean isUserInResponseRecipientTeamAndRelatedResponseCommentVisibleToRecipientsTeamMembers =
                 isResponseCommentVisibleTo(relatedQuestion, relatedComment,
-                        FeedbackParticipantType.RECEIVER_TEAM_MEMBERS)
-                        && studentsEmailInTeam.contains(response.recipient);
+                                           FeedbackParticipantType.RECEIVER_TEAM_MEMBERS)
+                && studentsEmailInTeam.contains(response.recipient);
 
         return isUserInResponseRecipientTeamAndRelatedResponseCommentVisibleToRecipients
                 || isUserInResponseGiverTeamAndRelatedResponseCommentVisibleToGiversTeamMembers
@@ -318,12 +318,12 @@ public final class FeedbackResponseCommentsLogic {
     }
 
     private boolean isVisibleToUser(String userEmail, FeedbackResponseAttributes response,
-                                    FeedbackQuestionAttributes relatedQuestion, FeedbackResponseCommentAttributes relatedComment,
-                                    boolean isVisibleToGiver, boolean isUserInstructor, boolean isUserStudent) {
+            FeedbackQuestionAttributes relatedQuestion, FeedbackResponseCommentAttributes relatedComment,
+            boolean isVisibleToGiver, boolean isUserInstructor, boolean isUserStudent) {
 
         boolean isUserInstructorAndRelatedResponseCommentVisibleToInstructors =
                 isUserInstructor && isResponseCommentVisibleTo(relatedQuestion, relatedComment,
-                        FeedbackParticipantType.INSTRUCTORS);
+                                                               FeedbackParticipantType.INSTRUCTORS);
 
         boolean isUserResponseRecipientAndRelatedResponseCommentVisibleToRecipients =
                 response.recipient.equals(userEmail) && isResponseCommentVisibleTo(relatedQuestion,
@@ -365,7 +365,7 @@ public final class FeedbackResponseCommentsLogic {
         InstructorAttributes instructor = instructorsLogic.getInstructorForEmail(courseId, email);
         if (instructor == null) {
             throw new EntityDoesNotExistException("User " + email + " is not a registered instructor for course "
-                    + courseId + ".");
+                                                + courseId + ".");
         }
     }
 
@@ -374,7 +374,7 @@ public final class FeedbackResponseCommentsLogic {
         FeedbackSessionAttributes session = fsLogic.getFeedbackSession(feedbackSessionName, courseId);
         if (session == null) {
             throw new EntityDoesNotExistException("Feedback session " + feedbackSessionName
-                    + " is not a session for course " + courseId + ".");
+                                                + " is not a session for course " + courseId + ".");
         }
     }
 

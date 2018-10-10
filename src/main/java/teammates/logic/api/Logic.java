@@ -1125,7 +1125,8 @@ public class Logic {
      * * All parameters are non-null.
      */
     public FeedbackSessionAttributes copyFeedbackSession(String newFeedbackSessionName, String newCourseId,
-                                                         ZoneId newTimeZone, String feedbackSessionName, String courseId, String instructorEmail)
+                                                         ZoneId newTimeZone, String feedbackSessionName,
+                                                         String courseId, String instructorEmail)
             throws EntityAlreadyExistsException, InvalidParametersException, EntityDoesNotExistException {
 
         Assumption.assertNotNull(newFeedbackSessionName);
@@ -2152,8 +2153,8 @@ public class Logic {
         return coursesLogic.getArchivedCourseIds(allCourses, instructorsForCourses);
     }
 
-    public List<FeedbackResponseAttributes>
-    getFeedbackResponsesForSession(String feedbackSessionName, String courseId) {
+    public List<FeedbackResponseAttributes> getFeedbackResponsesForSession(String feedbackSessionName,
+                                                                           String courseId) {
         Assumption.assertNotNull(feedbackSessionName);
         Assumption.assertNotNull(courseId);
         return feedbackResponsesLogic.getFeedbackResponsesForSession(feedbackSessionName, courseId);
