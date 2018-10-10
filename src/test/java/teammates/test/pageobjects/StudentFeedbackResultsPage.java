@@ -3,9 +3,6 @@ package teammates.test.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class StudentFeedbackResultsPage extends AppPage {
 
     public StudentFeedbackResultsPage(Browser browser) {
@@ -29,25 +26,5 @@ public class StudentFeedbackResultsPage extends AppPage {
         WebElement qnAdditionalInfoButton = browser.driver.findElement(
                 By.id("questionAdditionalInfoButton-" + qnNumber + "-" + additionalInfoId));
         return qnAdditionalInfoButton.getText();
-    }
-    public void clickPdfView() {
-
-        /**
-         * Click the pdf button
-         */
-        List<WebElement> viewTeamLinks = browser.driver.findElements(By.id("response_submit_button"));
-
-        click(viewTeamLinks.get(0));
-        waitForPageToLoad();
-
-
-        /**
-         * check if tabs created by switching back and forth
-         */
-        ArrayList<String> tabs = new ArrayList<String> (browser.driver.getWindowHandles());
-        browser.driver.switchTo().window(tabs.get(1));
-
-        browser.driver.switchTo().window(tabs.get(0));
-
     }
 }
