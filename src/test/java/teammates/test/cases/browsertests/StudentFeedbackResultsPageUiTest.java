@@ -77,14 +77,6 @@ public class StudentFeedbackResultsPageUiTest extends BaseUiTestCase {
         verifyQuestionAdditionalInfoExpand(qnNumber, additionalInfoId);
         verifyQuestionAdditionalInfoCollapse(qnNumber, additionalInfoId);
 
-
-        /**
-         * Unit test Pdf Link check
-         */
-        ______TS("link: view Pdf new tab");
-
-        resultsPage.clickPdfView();
-
         ______TS("MSQ session results");
 
         resultsPage = loginToStudentFeedbackResultsPage("Alice", "MSQ Session");
@@ -146,7 +138,6 @@ public class StudentFeedbackResultsPageUiTest extends BaseUiTestCase {
         resultsPage = confirmationPage.clickConfirmButton(StudentFeedbackResultsPage.class);
 
         resultsPage.verifyHtmlMainContent("/studentFeedbackResultsPageNewlyRegistered.html");
-
 
         BackDoor.deleteStudent(unreg.course, unreg.email);
     }

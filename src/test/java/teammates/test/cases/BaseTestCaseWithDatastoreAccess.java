@@ -240,15 +240,12 @@ public abstract class BaseTestCaseWithDatastoreAccess extends BaseTestCaseWithOb
     protected void removeAndRestoreDataBundle(DataBundle testData) {
         int retryLimit = OPERATION_RETRY_COUNT;
         String backDoorOperationStatus = doRemoveAndRestoreDataBundle(testData);
-       
         while (!backDoorOperationStatus.equals(Const.StatusCodes.BACKDOOR_STATUS_SUCCESS) && retryLimit > 0) {
             retryLimit--;
             print("Re-trying removeAndRestoreDataBundle - " + backDoorOperationStatus);
             ThreadHelper.waitFor(OPERATION_RETRY_DELAY_IN_MS);
             backDoorOperationStatus = doRemoveAndRestoreDataBundle(testData);
         }
-       
-        
         assertEquals(Const.StatusCodes.BACKDOOR_STATUS_SUCCESS, backDoorOperationStatus);
     }
 
