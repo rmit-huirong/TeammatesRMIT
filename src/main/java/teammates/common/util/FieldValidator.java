@@ -1,8 +1,5 @@
 package teammates.common.util;
 
-import com.google.appengine.api.datastore.Text;
-import teammates.common.datatransfer.FeedbackParticipantType;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
@@ -13,6 +10,9 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
+import com.google.appengine.api.datastore.Text;
+import teammates.common.datatransfer.FeedbackParticipantType;
 
 /**
  * Used to handle the data validation aspect e.g. validate emails, names, etc.
