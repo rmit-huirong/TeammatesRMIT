@@ -1,19 +1,18 @@
 package teammates.common.datatransfer.attributes;
 
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-
 import com.google.appengine.api.datastore.Text;
-
 import teammates.common.datatransfer.FeedbackParticipantType;
 import teammates.common.util.Const;
 import teammates.common.util.FieldValidator;
 import teammates.common.util.JsonUtils;
 import teammates.common.util.SanitizationHelper;
 import teammates.storage.entity.FeedbackResponseComment;
+
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Represents a data transfer object for {@link FeedbackResponseComment} entities.
@@ -25,7 +24,6 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     public String feedbackSessionName;
     public String giverEmail;
     public Text commentText;
-    
     // Optional fields
     public String feedbackResponseId;
     public String feedbackQuestionId;
@@ -38,7 +36,6 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
     public Long feedbackResponseCommentId;
     public String giverSection;
     public String receiverSection;
-    
     FeedbackResponseCommentAttributes() {
         giverSection = Const.DEFAULT_SECTION;
         receiverSection = Const.DEFAULT_SECTION;
@@ -64,10 +61,8 @@ public class FeedbackResponseCommentAttributes extends EntityAttributes<Feedback
                 .withShowGiverNameTo(comment.getShowGiverNameTo())
                 .build();
     }
-    
     /**
      * Returns new builder instance with default values for optional fields.
-     *
      * <p>Following default values are set to corresponding attributes:
      * <ul>
      * <li>{@code giverSection = "None"}</li>

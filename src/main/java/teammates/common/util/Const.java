@@ -1,15 +1,10 @@
 package teammates.common.util;
 
+import teammates.common.datatransfer.FeedbackParticipantType;
+
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
-import teammates.common.datatransfer.FeedbackParticipantType;
+import java.util.*;
 
 /**
  * Stores constants that are widely used across classes.
@@ -438,7 +433,6 @@ public final class Const {
         public static final String COMMENT_ADD = "Add comment";
         public static final String COMMENT_EDIT = "Edit this comment";
         public static final String COMMENT_DELETE = "Delete this comment";
-        
         public static final String SEARCH_STUDENT = "Search for student's information, e.g. name, email";
 
         public static final String ACTION_NOT_ALLOWED = "You do not have the permissions to access this feature";
@@ -1013,7 +1007,6 @@ public final class Const {
 
         public static final String INSTRUCTOR_FEEDBACK_SUBMISSION_EDIT_PAGE = "/page/instructorFeedbackSubmissionEditPage";
         public static final String INSTRUCTOR_FEEDBACK_SUBMISSION_EDIT_SAVE = "/page/instructorFeedbackSubmissionEditSave";
-
         public static final String CREATE_IMAGE_UPLOAD_URL = "/page/createImageUploadUrl";
         public static final String IMAGE_UPLOAD = "/page/imageUpload";
 

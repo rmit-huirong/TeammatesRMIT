@@ -113,18 +113,14 @@ public class CourseList {
         list.add("BUSM3150 - Applied Management");
         list.add("BUSM3293 - Leadership and Management");
         list.add("BUSM4184 - Luxury Fashion Business Management");
-
-
         /**
          * The method to sort courses
          * */
         Collections.sort(list);
-
         /**
          * The option other
          * */
         list.add("OTHER");
-
         return list;
     }
 }

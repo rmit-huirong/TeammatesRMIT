@@ -1,19 +1,12 @@
 package teammates.common.util;
 
+import com.google.appengine.api.datastore.Text;
+import teammates.common.datatransfer.FeedbackParticipantType;
+
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
-import com.google.appengine.api.datastore.Text;
-
-import teammates.common.datatransfer.FeedbackParticipantType;
+import java.util.*;
 
 /**
  * Used to handle the data validation aspect e.g. validate emails, names, etc.
@@ -244,7 +237,6 @@ public class FieldValidator {
      */
     public static final String REGEX_EMAIL = "^[\\w+-][\\w+!#$%&'*/=?^_`{}~-]*+(\\.[\\w+!#$%&'*/=?^_`{}~-]+)*+"
             + "@([A-Za-z0-9-]+\\.)*[A-Za-z]+$";
-       
     /**
      * Allows English alphabet, numbers, underscore,  dot and hyphen.
      */
