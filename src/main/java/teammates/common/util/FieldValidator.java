@@ -6,7 +6,13 @@ import teammates.common.datatransfer.FeedbackParticipantType;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Used to handle the data validation aspect e.g. validate emails, names, etc.

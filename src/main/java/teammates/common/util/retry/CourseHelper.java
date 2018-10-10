@@ -1,4 +1,4 @@
-package teammates.common.util;
+package teammates.common.util.retry;
 
 import teammates.storage.entity.Course;
 
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * This is a helper class to hold nationality-related functions.
  */
-public final class CourseHelper {
+public final class CourseHelper     {
 
     /**
      * This list of nationalities was created for the dropdown list and contains
