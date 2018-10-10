@@ -1006,7 +1006,6 @@ public final class Const {
                 "/page/instructorFeedbackResponseCommentEdit";
         public static final String INSTRUCTOR_FEEDBACK_RESPONSE_COMMENT_DELETE =
                 "/page/instructorFeedbackResponseCommentDelete";
-        
         public static final String INSTRUCTOR_COURSE_STATS_PAGE = "/page/courseStatsPage";
         public static final String INSTRUCTOR_FEEDBACK_STATS_PAGE = "/page/feedbackSessionStatsPage";
 
