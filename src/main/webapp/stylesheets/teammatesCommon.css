@@ -1318,7 +1318,7 @@ Default to alert color for visibility titles used within an alert context.
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0,0 , .4);    
+    background-color: rgba(0, 0, 0, 0, .4);
 }
 
 #loginContent {
@@ -1788,7 +1788,7 @@ fieldset {
     margin: 0 0 5px;
     padding: 10px;
     font-size: 15px;
-    box-shadow: inset 0px 0px 3px rgba(255, 255, 255, .5);
+    box-shadow: inset 3px rgba(255, 255, 255, .5);
 }
 
 #contact button[type="submit"]:hover {
