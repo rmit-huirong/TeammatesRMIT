@@ -5,7 +5,7 @@ jdk:
 branches:
   only:
     - master
-    - release
+    - production
 
 notifications:
   email: false
