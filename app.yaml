@@ -159,5 +159,4 @@ handlers:
   login: optional
   secure: optional
 
-skip_files: app.yaml
-- .git/
+skip_files: .git/
