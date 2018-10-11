@@ -5,6 +5,7 @@ branches:
   only:
   - master
   - dev
+  - production
 notifications:
   email: false
 sudo: required
