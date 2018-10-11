@@ -1,5 +1,7 @@
 runtime: java8
+
 instance_class: F1
+
 inbound_services:
 - warmup
 derived_file_type:
@@ -158,6 +160,5 @@ handlers:
   script: unused
   login: optional
   secure: optional
- skip_files:
- - .git/
+ skip_files: .git/
  
