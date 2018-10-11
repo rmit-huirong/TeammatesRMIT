@@ -18,7 +18,6 @@ addons:
   firefox: "46.0"
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_102ced10d578_key -iv $encrypted_102ced10d578_iv -in client-secret.json.enc -out client-secret.json -d
   - |
       git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qvE '(\.md)|(\.txt)|(\.png)|(\.jpg)|(\.gif)|^(LICENSE)|^(docs)|^(\.templates)'
       status_codes=( ${PIPESTATUS[*]} ); git_diff_status=${status_codes[0]}; grep_status=${status_codes[1]}
