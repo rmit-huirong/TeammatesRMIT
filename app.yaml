@@ -159,4 +159,4 @@ handlers:
   login: optional
   secure: optional
 
-skip_files: .git/
+ skip_files: .git/
