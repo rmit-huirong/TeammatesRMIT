@@ -62,8 +62,3 @@ after_failure:
 after_success:
   - ./gradlew jacocoReport
   - bash <(curl -s https://codecov.io/bash)
-deploy:
-  provider: gae
-  keyfile: client-secret.json
-  project: teammates-undefined
-  on: production
