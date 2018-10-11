@@ -47,7 +47,7 @@
         </classes>
     </test>
 
-    <test name="parallel-ui-tests" parallel="classes">
+    <test name="sequential-ui-tests">
         <!-- These cover the important UI functionality. Can be run in parallel. -->
         <classes>
             <class name="teammates.test.cases.browsertests.AppPageUiTest" />
