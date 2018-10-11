@@ -43,9 +43,10 @@ before_script:
 - npm run lint
 install: true
 script:
-- npm run build
-- "./gradlew appengineStart"
-- "./gradlew ciTests"
+  - npm run build
+  - ./gradlew appengineStart
+
+>>>>>>> caa4010f14868218e48e31fbdf954dbbcd45a0ae
 after_failure:
 - gem install gist
 - "./gradlew generateFailedCmd"
