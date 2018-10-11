@@ -4,9 +4,7 @@ jdk:
 
 branches:
   only:
-    - master
-    - dev
-    - production
+  - production
 
 notifications:
   email: false
@@ -61,6 +59,5 @@ after_failure:
 deploy:
   provider: gae
   keyfile: client-secret.json
-  config: appveyor.yml
   project: teammates-undefined
   on: production
