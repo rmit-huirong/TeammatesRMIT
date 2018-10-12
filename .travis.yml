@@ -5,7 +5,7 @@ jdk:
 branches:
   only:
   - production
-  - Test
+  - Tests
 
 notifications:
   email: false
