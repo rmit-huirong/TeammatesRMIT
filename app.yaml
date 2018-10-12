@@ -162,4 +162,5 @@ handlers:
   secure: optional
   
 skip_files: .git/
+- /firefox/
  
