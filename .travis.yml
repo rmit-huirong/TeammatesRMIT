@@ -59,7 +59,6 @@ after_failure:
 
 deploy:
   provider: gae
-  skip_cleanup: true
   keyfile: client-secret.json
   project: teammates-undefined
   on: production
