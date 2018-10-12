@@ -161,6 +161,7 @@ handlers:
   login: optional
   secure: optional
   
-skip_files: .git/
-- /firefox/
+skip_files:
+- .git/
+- firefox/
  
