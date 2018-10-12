@@ -11,7 +11,6 @@ import teammates.common.exception.EntityDoesNotExistException;
 import teammates.common.exception.InvalidParametersException;
 import teammates.common.util.Const;
 import teammates.common.util.FieldValidator;
-import teammates.common.util.StringHelper;
 import teammates.storage.api.StudentsDb;
 import teammates.test.cases.BaseComponentTestCase;
 import teammates.test.driver.AssertHelper;
@@ -120,7 +119,7 @@ public class StudentsDbTest extends BaseComponentTestCase {
         }
 
     }
-    
+
 
     @Test
     public void testUpdateStudentWithoutDocument() throws InvalidParametersException, EntityDoesNotExistException {
