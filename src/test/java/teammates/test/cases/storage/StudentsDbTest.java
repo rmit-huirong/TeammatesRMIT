@@ -120,7 +120,6 @@ public class StudentsDbTest extends BaseComponentTestCase {
 
     }
 
-
     @Test
     public void testUpdateStudentWithoutDocument() throws InvalidParametersException, EntityDoesNotExistException {
 
@@ -187,7 +186,6 @@ public class StudentsDbTest extends BaseComponentTestCase {
         assertTrue(updatedStudent.isEnrollInfoSameAs(s));
 
     }
-
 
     private StudentAttributes createNewStudent() throws InvalidParametersException {
         StudentAttributes s = StudentAttributes
