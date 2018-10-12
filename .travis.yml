@@ -4,8 +4,6 @@ jdk:
 
 branches:
   only:
-    - master
-    - dev
     - production
 
 notifications:
@@ -53,6 +51,7 @@ install: true
 script:
   - npm run build
   - ./gradlew appengineStart
+  - ./gradlew ciTests
 
 after_failure:
   - gem install gist
@@ -63,3 +62,4 @@ deploy:
   keyfile: client-secret.json
   project: teammates-undefined
   on: production
+

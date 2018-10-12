@@ -12,7 +12,6 @@
 
     <test name="smoke-tests">
         <classes>
-            <class name="teammates.test.cases.browsertests.MashupPageUiTest" />
         </classes>
     </test>
 </suite>
