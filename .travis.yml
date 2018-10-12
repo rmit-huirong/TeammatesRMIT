@@ -4,13 +4,7 @@ jdk:
 
 branches:
   only:
-<<<<<<< HEAD
-    - master
-    - dev
-    - production
-=======
-  - production
->>>>>>> tests
+    - Prod
 
 notifications:
   email: false
@@ -67,8 +61,5 @@ deploy:
   provider: gae
   keyfile: client-secret.json
   project: teammates-undefined
-<<<<<<< HEAD
-  on: production
-=======
-  on: Production
->>>>>>> tests
+  on: Prod
+
