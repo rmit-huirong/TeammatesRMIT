@@ -120,60 +120,7 @@ public class StudentsDbTest extends BaseComponentTestCase {
         }
 
     }
-
-    @Test
-    public void testGetStudent() throws InvalidParametersException, EntityDoesNotExistException {
-
-        StudentAttributes s = createNewStudent();
-        s.googleId = "validGoogleId";
-        s.team = "validTeam";
-        studentsDb.updateStudentWithoutSearchability(s.course, s.email, s.name, s.team, s.section,
-                                                     s.email, s.googleId, s.comments);
-
-        ______TS("typical success case for getStudentForRegistrationKey: existing student");
-        StudentAttributes retrieved = studentsDb.getStudentForEmail(s.course, s.email);
-        assertNotNull(retrieved);
-        assertNotNull(studentsDb.getStudentForRegistrationKey(StringHelper.encrypt(retrieved.key)));
-
-        assertNull(studentsDb.getStudentForRegistrationKey(StringHelper.encrypt("notExistingKey")));
-
-        ______TS("non existant student case");
-
-        retrieved = studentsDb.getStudentForEmail("any-course-id", "non-existent@email.com");
-        assertNull(retrieved);
-
-        StudentAttributes s2 = createNewStudent("one.new@gmail.com");
-        s2.googleId = "validGoogleId2";
-        studentsDb.updateStudentWithoutSearchability(s2.course, s2.email, s2.name, s2.team, s2.section,
-                                                     s2.email, s2.googleId, s2.comments);
-        studentsDb.deleteStudentsForGoogleIdWithoutDocument(s2.googleId);
-        assertNull(studentsDb.getStudentForGoogleId(s2.course, s2.googleId));
-
-        s2 = createNewStudent("one.new@gmail.com");
-        assertTrue(studentsDb.getUnregisteredStudentsForCourse(s2.course).get(0).isEnrollInfoSameAs(s2));
-
-        assertTrue(s.isEnrollInfoSameAs(studentsDb.getStudentsForGoogleId(s.googleId).get(0)));
-        assertTrue(studentsDb.getStudentsForCourse(s.course).get(0).isEnrollInfoSameAs(s)
-                || studentsDb.getStudentsForCourse(s.course).get(0).isEnrollInfoSameAs(s2));
-        assertTrue(studentsDb.getStudentsForTeam(s.team, s.course).get(0).isEnrollInfoSameAs(s));
-
-        ______TS("null params case");
-        try {
-            studentsDb.getStudentForEmail(null, "valid@email.com");
-            signalFailureToDetectException();
-        } catch (AssertionError ae) {
-            assertEquals(Const.StatusCodes.DBLEVEL_NULL_INPUT, ae.getMessage());
-        }
-        try {
-            studentsDb.getStudentForEmail("any-course-id", null);
-            signalFailureToDetectException();
-        } catch (AssertionError ae) {
-            assertEquals(Const.StatusCodes.DBLEVEL_NULL_INPUT, ae.getMessage());
-        }
-
-        studentsDb.deleteStudent(s.course, s.email);
-        studentsDb.deleteStudent(s2.course, s2.email);
-    }
+    
 
     @Test
     public void testUpdateStudentWithoutDocument() throws InvalidParametersException, EntityDoesNotExistException {
@@ -242,48 +189,6 @@ public class StudentsDbTest extends BaseComponentTestCase {
 
     }
 
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testDeleteStudent() throws InvalidParametersException, EntityDoesNotExistException {
-        StudentAttributes s = createNewStudent();
-        s.googleId = "validGoogleId";
-        studentsDb.updateStudentWithoutSearchability(s.course, s.email, s.name, s.team, s.section,
-                                                     s.email, s.googleId, s.comments);
-        // Delete
-        studentsDb.deleteStudentWithoutDocument(s.course, s.email);
-
-        StudentAttributes deleted = studentsDb.getStudentForEmail(s.course, s.email);
-
-        assertNull(deleted);
-        studentsDb.deleteStudentsForGoogleIdWithoutDocument(s.googleId);
-        assertNull(studentsDb.getStudentForGoogleId(s.course, s.googleId));
-        int currentStudentNum = studentsDb.getAllStudents().size();
-        s = createNewStudent();
-        createNewStudent("secondStudent@mail.com");
-        assertEquals(2 + currentStudentNum, studentsDb.getAllStudents().size());
-        studentsDb.deleteStudentsForCourseWithoutDocument(s.course);
-        assertEquals(currentStudentNum, studentsDb.getAllStudents().size());
-        // delete again - should fail silently
-        studentsDb.deleteStudentWithoutDocument(s.course, s.email);
-
-        // Null params check:
-        try {
-            studentsDb.deleteStudentWithoutDocument(null, s.email);
-            signalFailureToDetectException();
-        } catch (AssertionError ae) {
-            assertEquals(Const.StatusCodes.DBLEVEL_NULL_INPUT, ae.getMessage());
-        }
-
-        try {
-            studentsDb.deleteStudentWithoutDocument(s.course, null);
-            signalFailureToDetectException();
-        } catch (AssertionError ae) {
-            assertEquals(Const.StatusCodes.DBLEVEL_NULL_INPUT, ae.getMessage());
-        }
-
-        studentsDb.deleteStudent(s.course, s.email);
-
-    }
 
     private StudentAttributes createNewStudent() throws InvalidParametersException {
         StudentAttributes s = StudentAttributes

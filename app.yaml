@@ -165,4 +165,3 @@ skip_files:
 - .git/
 - firefox/
 - build/libs/
-- 
