@@ -62,4 +62,3 @@ deploy:
   keyfile: client-secret.json
   project: teammates-undefined
   on: Prod
-  
